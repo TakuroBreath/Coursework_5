@@ -27,25 +27,30 @@ def getEmployers():
 
 
 def api_work():
-    params = {
-        'employer_id': 15478,  # ID 2ГИС
-        'area': 113,  # Поиск в зоне
-        'page': 2,  # Номер страницы
-        'per_page': 100  # Кол-во вакансий на 1 странице
-    }
-    # req = requests.get("https://api.hh.ru/vacancies?employer_id=15478")
-    req = requests.get("https://api.hh.ru/vacancies", params)
+    req = requests.get("https://api.hh.ru/vacancies?employer_id=15478")
     data = req.content.decode()
     req.close()
     js = json.loads(data)
 
-    i = 0
-    for l in js['items']:
-        print(js['items'][i])
-        i += 1
+    t = js['found']
+    pages = t // 100
+    for page in range(pages+1):
+        params = {
+            'employer_id': 15478,  # ID VK
+            'area': 113,  # Поиск в зоне 113 - RF
+            'page': page,  # Номер страницы
+            'per_page': 100  # Кол-во вакансий на 1 странице
+        }
+        req = requests.get("https://api.hh.ru/vacancies", params)
+        data = req.content.decode()
+        req.close()
+        js = json.loads(data)
+        i = 0
+        for l in js['items']:
+            print(js['items'][i])
+            i += 1
 
-    print(len(js['items']))
+        print(len(js['items']))
 
 
 api_work()
-
