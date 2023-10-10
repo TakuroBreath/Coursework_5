@@ -28,4 +28,7 @@ If you are going to use the program using a .py file, you can delete this folder
 - Gets a list of all vacancies with a salary higher than the average for all vacancies.
 - Gets a list of all vacancies whose titles contain the words passed to the method, for example "python".
 
+# Warning!
+For the application to work, you must have a database called HeadHunter. Please create it
+
 
