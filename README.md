@@ -1,36 +1,31 @@
-Получить данные о работодателях и их вакансиях с сайта hh.ru. Для этого используйте публичный API hh.ru и библиотеку 
-requests
-.
-Выбрать не менее 10 интересных вам компаний, от которых вы будете получать данные о вакансиях по API.
-Спроектировать таблицы в БД PostgreSQL для хранения полученных данных о работодателях и их вакансиях. Для работы с БД используйте библиотеку 
-psycopg2
-.
-Реализовать код, который заполняет созданные в БД PostgreSQL таблицы данными о работодателях и их вакансиях.
-Создать класс 
-DBManager
- для работы с данными в БД.
-Класс DBManager
-Создайте класс 
-DBManager
-, который будет подключаться к БД PostgreSQL и иметь следующие методы:
+# CourseWork_5
+Hello!
+This is a tutorial project for a job parser with a plug-in database and some selection and sorting functionality.
+The project consists of several files and two folders
 
-get_companies_and_vacancies_count()
- — получает список всех компаний и количество вакансий у каждой компании.
-get_all_vacancies()
- — получает список всех вакансий с указанием названия компании, названия вакансии и зарплаты и ссылки на вакансию.
-get_avg_salary()
- — получает среднюю зарплату по вакансиям.
-get_vacancies_with_higher_salary()
- — получает список всех вакансий, у которых зарплата выше средней по всем вакансиям.
-get_vacancies_with_keyword()
- — получает список всех вакансий, в названии которых содержатся переданные в метод слова, например python.
-Класс 
-DBManager
- должен использовать библиотеку 
-psycopg2
- для работы с БД.
+##### Folder DBManager:
+[filling_db.py](https://github.com/TakuroBreath/Coursework_5/blob/main/DBManager/filling_db.py) - Python script with functionality for filling the database
 
-Детали оформления решения 
-Проект выложен на GitHub.
-Оформлен файл README.md с информацией, о чем проект, как его запустить и как с ним работать.
-Есть Python-модуль для создания и заполнения данными таблиц БД.# Coursework_5
+[DBManager.py](https://github.com/TakuroBreath/Coursework_5/blob/main/DBManager/DBManager.py) - Python script with class with methods for DB-work
+
+##### Folder _internal:
+This folder is necessary for the correct launch of the .exe file.
+If you are going to use the program using a .py file, you can delete this folder
+
+##### Files:
+[user.py](https://github.com/TakuroBreath/Coursework_5/blob/main/user.py) - Python script with functions for user interaction
+
+[work_with_api.py](https://github.com/TakuroBreath/Coursework_5/blob/main/work_with_api.py) - Python script for parsing employer pages
+
+
+
+
+## Features
+
+- Gets a list of all companies and the number of vacancies for each company.
+- Receives a list of all vacancies indicating the company name, vacancy title and salary, and a link to the vacancy.
+- Receives the average salary for the vacancies.
+- Gets a list of all vacancies with a salary higher than the average for all vacancies.
+- Gets a list of all vacancies whose titles contain the words passed to the method, for example "python".
+
+
